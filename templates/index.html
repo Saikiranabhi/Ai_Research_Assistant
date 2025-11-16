@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Agentic AI Research Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>
+        // Submit form when pressing Enter (Shift+Enter for newline)
+        document.addEventListener("DOMContentLoaded", function() {
+            const textarea = document.querySelector("textarea");
+            const form = document.querySelector("form");
+            textarea.addEventListener("keydown", function(event) {
+                if (event.key === "Enter" && !event.shiftKey) {
+                    event.preventDefault();
+                    form.submit();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <h1>Agentic AI Research Assistant</h1>
+            <p class="subtitle">Planner → Researcher → Summarizer</p>
+        </header>
+
+        <main>
+            <section class="box input-box">
+                <form method="POST">
+                    <textarea name="query" placeholder="Enter research topic or question..." required>{{ query or '' }}</textarea>
+                    <button type="submit">Run Research</button>
+                </form>
+                <p class="hint">(Press <b>Enter</b> to submit, <b>Shift + Enter</b> for new line)</p>
+            </section>
+
+            {% if result %}
+            <section class="box plan-box">
+                <h2>Research Plan</h2>
+                <ol>
+                    {% for step in result.plan %}
+                    <li>{{ step }}</li>
+                    {% endfor %}
+                </ol>
+            </section>
+
+            <!-- Research Results Section -->
+            <section class="box results-box">
+              <h2>Research Results</h2>
+              <div class="formatted-results">
+                {{ result.summary | safe }}
+              </div>
+            </section>
+
+            
+
+            <!-- <section class="box results-box">
+                <h2>Research Results</h2>
+                <pre class="formatted-results">{{ result.summary | safe }}</pre>
+            </section> -->
+
+            <!-- <section class="box results-box">
+                <h1>Research Results</h1>
+                <div class="results-content">
+                    {% if result.results %}
+                    {{ result.results | safe }}
+                    {% else %}
+                    <p>No results yet. Try submitting a query!</p>
+                    {% endif %}
+               </div>
+            </section> -->
+
+            <section class="box summary-box">
+                <h2>Summary</h2>
+                <pre class="summary">{{ result.summary }}</pre>
+            </section>
+            {% endif %}
+        </main>
+
+        <footer>
+            <p>Built with Flask - Gemini API</p>
+        </footer>
+    </div>
+</body>
+</html>
