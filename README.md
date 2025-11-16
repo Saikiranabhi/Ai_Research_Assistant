@@ -1,5 +1,10 @@
 # 🤖 Agentic AI Research Assistant
 
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![Flask](https://img.shields.io/badge/Flask-3.0+-green.svg)
+![Gemini](https://img.shields.io/badge/Gemini-2.0%20Flash-orange.svg)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 An **AI-powered research assistant** built using **Flask** and **Gemini API**, designed to automatically generate a structured **Research Plan**, conduct in-depth **Research**, and produce a concise **Summary** — all within a clean, minimal web interface.
 
 ---
