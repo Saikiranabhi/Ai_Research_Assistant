@@ -58,8 +58,8 @@ Research Agent 3/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/research-agent.git
-cd "Research Agent 3"
+git clone https://github.com/Saikiranabhi/Ai_Research_Assistant.git
+cd Ai_Research_Assistant
 ```
 
 ### 2️⃣ Create and Activate a Virtual Environment
