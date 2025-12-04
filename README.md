@@ -36,7 +36,10 @@ Research Agent 3/
 ├── app/
 │   ├── __init__.py              # Flask app factory
 │   ├── main.py                  # Main blueprint + routes
-│   └── researcher_agent.py      # Handles Gemini AI calls
+│   └── researcher_agent.py      # Handles Gemini AI calls                  
+│   └── coordinator.py           # Coordinates the agents
+|   └── planner_agent.py         # Plans the Research context                  
+│   └── summerizer_agent.py      # Summerize the Context
 │
 ├── static/
 │   └── css/
@@ -48,6 +51,9 @@ Research Agent 3/
 ├── .env                         # API keys and secrets
 ├── app.py                       # Flask app entry point
 ├── requirements.txt             # Python dependencies
+├── .dockerignore                # Ignore the files into the Docker container
+├── Dockerfile                   # Docker configuration
+├── .gitignore                   # Ignore the files into the git
 └── README.md                    # Documentation
 ```
 
